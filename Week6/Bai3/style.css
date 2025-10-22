@@ -1,0 +1,273 @@
+/* Đặt style chung */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container chính để căn giữa nội dung */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Styling Header và Navigation --- */
+header {
+    background-color: #2c3e50; /* Nền màu xanh đen */
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style: none; /* Bỏ dấu chấm đầu dòng của list */
+    display: flex; /* Dùng flexbox để tạo menu ngang */
+    justify-content: center; /* Căn giữa các mục menu */
+}
+
+nav ul li {
+    margin: 0 20px; /* Khoảng cách giữa các mục menu */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none; /* Bỏ gạch chân link */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#gioi-thieu {
+    text-align: center;
+}
+
+/* --- Danh sách sản phẩm (Product list layout) --- */
+#gioi-thieu, #san-pham, #lien-he {
+    padding: 20px 0;
+}
+
+#gioi-thieu h2, #san-pham h2, #lien-he h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.product-list {
+    display: flex; /* Dùng flexbox để chia cột */
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: center;
+}
+
+.product-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bo tròn các góc */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 300px; /* Co giãn linh hoạt, chiều rộng cơ bản 300px */
+    max-width: 350px;
+    transition: transform 0.2s; /* Hiệu ứng khi di chuột */
+}
+.product-item:hover {
+    transform: translateY(-5px); /* Nhấc sản phẩm lên một chút khi hover */
+}
+
+.product-item img {
+    max-width: 100%; /* Để ảnh không tràn ra ngoài */
+    height: 150px; /* Cố định chiều cao ảnh */
+    object-fit: contain; /* Giữ tỷ lệ ảnh */
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    font-size: 1.25em;
+}
+
+.product-item .price {
+    color: #e74c3c; /* Giá màu đỏ nổi bật */
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* --- Form và Footer --- */
+#lien-he form {
+    max-width: 600px;
+    margin: 20px auto; /* Canh giữa form */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#lien-he form div {
+    margin-bottom: 15px; /* Tạo khoảng cách giữa các trường input */
+}
+
+#lien-he label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#lien-he input,
+#lien-he textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Giúp padding không ảnh hưởng đến width */
+}
+
+#lien-he button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Màu nền nút */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#lien-he button:hover {
+    background-color: #2980b9; /* Màu nền khi hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: #ecf0f1; /* Màu chữ xám nhạt */
+}
+
+/* Lớp CSS để ẩn phần tử */
+.hidden {
+    display: none;
+}
+
+/* Định dạng cho khu vực điều khiển sản phẩm */
+.product-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+#searchInput {
+    flex-grow: 1; /* Cho phép ô tìm kiếm co giãn */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#showAddFormBtn {
+    padding: 10px 20px;
+    background-color: #27ae60; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#showAddFormBtn:hover {
+    background-color: #229954;
+}
+
+/* Định dạng cho form thêm sản phẩm, tương tự form liên hệ */
+#addProductForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #27ae60; /* Thêm điểm nhấn màu xanh */
+}
+
+#addProductForm div {
+    margin-bottom: 15px;
+}
+
+#addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addProductForm input,
+#addProductForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#addProductForm button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#addProductForm button:hover {
+    background-color: #229954;
+}
+
+/* Responsive cho khu vực điều khiển */
+@media (max-width: 600px) {
+    .product-controls {
+        flex-direction: column;
+    }
+    #searchInput, #showAddFormBtn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ---  Thiết kế Responsive --- */
+@media (max-width: 768px) {
+    /* Áp dụng cho màn hình nhỏ hơn 768px (máy tính bảng) */
+    .product-list {
+        flex-direction: column; /* Chuyển layout sản phẩm thành 1 cột */
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Áp dụng cho màn hình nhỏ hơn 600px (điện thoại) */
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Chuyển menu thành menu dọc */
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0; /* Khoảng cách giữa các mục menu dọc */
+    }
+}

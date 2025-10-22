@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Đồng Hồ Hải Yến</title>
+    <!-- 1. Liên kết file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cửa Hàng Đồng Hồ Hải Yến</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Thêm ID cho section giới thiệu -->
+        <section id="gioi-thieu">
+            <h2>Đẳng cấp trên từng khoảnh khắc</h2>
+            <p>Chào mừng bạn đến với Cửa Hàng Đồng Hồ Hải Yến - Nơi thời gian và phong cách giao thoa.</p>
+        </section>
+
+        <!-- Thêm ID cho section sản phẩm -->
+        <section id="san-pham">
+            <h2>Sản phẩm nổi bật</h2>
+            <!-- Thêm một div container để nhóm các sản phẩm lại -->
+            <div class="product-list">
+                <!-- Thêm class cho từng sản phẩm -->
+                <article class="product-item">
+                    <img 
+                        src="https://casio-hcm.vn/wp-content/uploads/2021/05/ga-2100-1adr_d44d186a74d54167a8507a9ace8143d8_7e90edb61a6b43cfbacfbb7821d599c5_master.png" 
+                        alt="Đồng hồ Casio G-Shock GA-2100 màu đen">
+                    <h3>Casio G-Shock GA-2100</h3>
+                    <p>Mẫu đồng hồ thể thao siêu bền, chống sốc và chống nước tuyệt vời, thiết kế bát giác độc đáo.</p>
+                    <p class="price"><strong>Giá:</strong> <span>2.900.000 VNĐ</span></p>
+                </article>
+
+                <article class="product-item">
+                    <img 
+                        src="https://donghoduyanh.com/images/products/2020/03/17/large/dong_ho_seiko_5_sport_srpd55k1_2.jpg.webp" 
+                        alt="Đồng hồ tự động Seiko 5 Sports SRPD55K1 mặt đen">
+                    <h3>Seiko 5 Sports SRPD</h3>
+                    <p>Huyền thoại trở lại với thiết kế mạnh mẽ, bộ máy tự động đáng tin cậy từ thương hiệu Nhật Bản.</p>
+                    <p class="price"><strong>Giá:</strong> <span>5.500.000 VNĐ</span></p>
+                </article>
+
+                <article class="product-item">
+                    <img 
+                        src="https://image.donghohaitrieu.com/wp-content/uploads/2023/09/7_FAC00008W0.jpg" 
+                        alt="Đồng hồ Orient Bambino Gen 2 mặt kính cong">
+                    <h3>Orient Bambino Gen 2</h3>
+                    <p>Vẻ đẹp cổ điển, thanh lịch với mặt kính cong quyến rũ, lựa chọn hoàn hảo cho quý ông.</p>
+                    <p class="price"><strong>Giá:</strong> <span>4.200.000 VNĐ</span></p>
+                </article>
+            </div>
+        </section>
+        
+        <!-- Thêm ID cho section liên hệ -->
+        <section id="lien-he">
+            <h2>Liên hệ tư vấn</h2>
+            <form action="#" method="post">
+                <!-- Xóa thẻ <br> và dùng CSS để tạo khoảng cách -->
+                <div>
+                    <label for="ho-ten">Họ và Tên:</label>
+                    <input type="text" id="ho-ten" name="ho-ten" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="noi-dung">Yêu cầu tư vấn:</label>
+                    <textarea id="noi-dung" name="noi-dung" rows="4" placeholder="Ví dụ: Tôi muốn tư vấn về mẫu Seiko 5..."></textarea>
+                </div>
+                <button type="submit">Gửi yêu cầu</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cửa Hàng Đồng Hồ Hải Yến. Đã đăng ký bản quyền.</p>
+        <p>Địa chỉ: Số 30, Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</p>
+    </footer>
+
+</body>
+</html>
