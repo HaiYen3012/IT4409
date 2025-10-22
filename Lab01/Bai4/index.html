@@ -47,13 +47,19 @@
                 </div>
                 <div>
                     <label for="newProductPrice">Giá (VNĐ):</label>
-                    <input type="text" id="newProductPrice" required>
+                    <!--Sửa thành number để validate tốt hơn-->
+                    <input type="number" id="newProductPrice" min="1" required>
                 </div>
                 <div>
                     <label for="newProductImage">Link hình ảnh:</label>
-                    <input type="text" id="newProductImage" placeholder="https://example.com/image.png">
+                    <input type="url" id="newProductImage" placeholder="https://example.com/image.png">
                 </div>
-                <button type="submit">Lưu sản phẩm</button>
+                 <!-- Nơi hiển thị thông báo lỗi -->
+                <p id="errorMsg" class="error-message"></p>
+                <div class="form-buttons">
+                    <button type="submit">Lưu sản phẩm</button>
+                    <button type="button" id="cancelBtn">Hủy</button>
+                </div>
             </form>
 
             <div class="product-list">

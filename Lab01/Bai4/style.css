@@ -48,6 +48,40 @@ nav a {
     font-size: 1.1em;
 }
 
+/* Hover hiệu ứng cho menu (menu items) */
+nav a {
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -4px;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    transform: scaleX(1);
+}
+
 #gioi-thieu {
     text-align: center;
 }
@@ -270,4 +304,35 @@ footer {
     nav ul li {
         margin: 10px 0; /* Khoảng cách giữa các mục menu dọc */
     }
+}
+
+/* --- CSS cho Bài tập 4 --- */
+
+/* Định dạng cho thông báo lỗi */
+.error-message {
+    color: #e74c3c; /* Màu đỏ */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Định dạng cho khu vực chứa các nút trong form */
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 15px;
+}
+
+/* Nút Hủy */
+#cancelBtn {
+    background-color: #7f8c8d; /* Màu xám */
+}
+
+#cancelBtn:hover {
+    background-color: #626F70;
+}
+
+/* Cho các nút trong form có độ rộng bằng nhau */
+#addProductForm button {
+    flex: 1; /* Chia đều không gian */
 }

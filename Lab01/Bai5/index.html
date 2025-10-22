@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Đồng Hồ Hải Yến</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cửa Hàng Đồng Hồ Hải Yến</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gioi-thieu">
+            <h2>Đẳng cấp trên từng khoảnh khắc</h2>
+            <p>Chào mừng bạn đến với Cửa Hàng Đồng Hồ Hải Yến - Nơi thời gian và phong cách giao thoa.</p>
+        </section>
+
+        <section id="san-pham">
+            <h2>Sản phẩm nổi bật</h2>
+
+            <!-- Thêm khu vực điều khiển sản phẩm: Tìm kiếm và nút Thêm -->
+            <div class="product-controls">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên đồng hồ...">
+                <button id="showAddFormBtn">Thêm sản phẩm</button>
+            </div>
+
+            <!-- Form thêm sản phẩm mới (mặc định ẩn) -->
+            <form id="addProductForm" class="hidden">
+                <h3>Thêm sản phẩm mới</h3>
+                <div>
+                    <label for="newProductName">Tên sản phẩm:</label>
+                    <input type="text" id="newProductName" required>
+                </div>
+                <div>
+                    <label for="newProductDesc">Mô tả:</label>
+                    <textarea id="newProductDesc" rows="3" required></textarea>
+                </div>
+                <div>
+                    <label for="newProductPrice">Giá (VNĐ):</label>
+                    <!--Sửa thành number để validate tốt hơn-->
+                    <input type="number" id="newProductPrice" min="1" required>
+                </div>
+                <div>
+                    <label for="newProductImage">Link hình ảnh:</label>
+                    <input type="url" id="newProductImage" placeholder="https://example.com/image.png">
+                </div>
+                 <!-- Nơi hiển thị thông báo lỗi -->
+                <p id="errorMsg" class="error-message"></p>
+                <div class="form-buttons">
+                    <button type="submit">Lưu sản phẩm</button>
+                    <button type="button" id="cancelBtn">Hủy</button>
+                </div>
+            </form>
+
+            <div class="product-list">
+            </div>
+        </section>
+        
+        <section id="lien-he">
+            <h2>Liên hệ tư vấn</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="ho-ten">Họ và Tên:</label>
+                    <input type="text" id="ho-ten" name="ho-ten" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="noi-dung">Yêu cầu tư vấn:</label>
+                    <textarea id="noi-dung" name="noi-dung" rows="4" placeholder="Ví dụ: Tôi muốn tư vấn về mẫu Seiko 5..."></textarea>
+                </div>
+                <button type="submit">Gửi yêu cầu</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cửa Hàng Đồng Hồ Hải Yến. Đã đăng ký bản quyền.</p>
+        <p>Địa chỉ: Số 30, Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

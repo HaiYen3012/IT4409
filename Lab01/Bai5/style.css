@@ -48,6 +48,40 @@ nav a {
     font-size: 1.1em;
 }
 
+/* Hover hiệu ứng cho menu (menu items) */
+nav a {
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -4px;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    transform: scaleX(1);
+}
+
 #gioi-thieu {
     text-align: center;
 }
@@ -156,6 +190,98 @@ footer {
     color: #ecf0f1; /* Màu chữ xám nhạt */
 }
 
+/* Lớp CSS để ẩn phần tử */
+.hidden {
+    display: none;
+}
+
+/* Định dạng cho khu vực điều khiển sản phẩm */
+.product-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+#searchInput {
+    flex-grow: 1; /* Cho phép ô tìm kiếm co giãn */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#showAddFormBtn {
+    padding: 10px 20px;
+    background-color: #27ae60; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#showAddFormBtn:hover {
+    background-color: #229954;
+}
+
+/* Định dạng cho form thêm sản phẩm, tương tự form liên hệ */
+#addProductForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #27ae60; /* Thêm điểm nhấn màu xanh */
+}
+
+#addProductForm div {
+    margin-bottom: 15px;
+}
+
+#addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addProductForm input,
+#addProductForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#addProductForm button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#addProductForm button:hover {
+    background-color: #229954;
+}
+
+/* Responsive cho khu vực điều khiển */
+@media (max-width: 600px) {
+    .product-controls {
+        flex-direction: column;
+    }
+    #searchInput, #showAddFormBtn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
 /* ---  Thiết kế Responsive --- */
 @media (max-width: 768px) {
     /* Áp dụng cho màn hình nhỏ hơn 768px (máy tính bảng) */
@@ -178,4 +304,35 @@ footer {
     nav ul li {
         margin: 10px 0; /* Khoảng cách giữa các mục menu dọc */
     }
+}
+
+/* --- CSS cho Bài tập 4 --- */
+
+/* Định dạng cho thông báo lỗi */
+.error-message {
+    color: #e74c3c; /* Màu đỏ */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Định dạng cho khu vực chứa các nút trong form */
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 15px;
+}
+
+/* Nút Hủy */
+#cancelBtn {
+    background-color: #7f8c8d; /* Màu xám */
+}
+
+#cancelBtn:hover {
+    background-color: #626F70;
+}
+
+/* Cho các nút trong form có độ rộng bằng nhau */
+#addProductForm button {
+    flex: 1; /* Chia đều không gian */
 }

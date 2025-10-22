@@ -1,7 +1,4 @@
-// Đảm bảo toàn bộ DOM đã được tải xong trước khi chạy script
 document.addEventListener('DOMContentLoaded', function() {
-
-    // --- Bước 6: Xử lý sự kiện tìm kiếm sản phẩm ---
 
     // 1. Lấy các phần tử cần thiết từ DOM
     const searchInput = document.getElementById('searchInput');
@@ -29,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-    // --- Bước 11: Xử lý sự kiện nút "Thêm sản phẩm" ---
+    // --- Xử lý sự kiện nút "Thêm sản phẩm" ---
 
     // 1. Lấy nút "Thêm sản phẩm" và form thêm sản phẩm
     const showAddFormBtn = document.getElementById('showAddFormBtn');
@@ -38,10 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. Gắn sự kiện 'click' cho nút
     showAddFormBtn.addEventListener('click', function() {
         // 3. Sử dụng classList.toggle() để thêm/xóa class 'hidden' một cách linh hoạt
-        // Đây là cách đơn giản và hiệu quả nhất để ẩn/hiện một phần tử.
         addProductForm.classList.toggle('hidden');
 
-        // (Tùy chọn) Thay đổi nội dung của nút để người dùng biết chức năng
         if (addProductForm.classList.contains('hidden')) {
             showAddFormBtn.textContent = 'Thêm sản phẩm';
         } else {
@@ -49,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // (Bonus) Xử lý sự kiện submit cho form thêm sản phẩm
     addProductForm.addEventListener('submit', function(event) {
         // Ngăn chặn hành vi mặc định của form là tải lại trang
         event.preventDefault(); 
@@ -60,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const price = document.getElementById('newProductPrice').value;
         const image = document.getElementById('newProductImage').value;
 
-        // Thông báo cho người dùng (trong bài tập thực tế sẽ là thêm sản phẩm vào danh sách)
+        // Thông báo cho người dùng (giả lập)
         alert(`Đã thêm sản phẩm (giả lập):\n- Tên: ${name}\n- Giá: ${price} VNĐ`);
 
         // Xóa nội dung trong form sau khi submit

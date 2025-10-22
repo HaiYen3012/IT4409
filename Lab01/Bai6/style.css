@@ -1,0 +1,513 @@
+/* Đặt style chung */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container chính để căn giữa nội dung */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* --- Styling Header và Navigation --- */
+header {
+    background-color: #2c3e50; /* Nền màu xanh đen */
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    padding: 0;
+    margin: 10px 0 0 0;
+    list-style: none; /* Bỏ dấu chấm đầu dòng của list */
+    display: flex; /* Dùng flexbox để tạo menu ngang */
+    justify-content: center; /* Căn giữa các mục menu */
+}
+
+nav ul li {
+    margin: 0 20px; /* Khoảng cách giữa các mục menu */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none; /* Bỏ gạch chân link */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Hover hiệu ứng cho menu (menu items) */
+nav a {
+    position: relative;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+    outline: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: -4px;
+    height: 2px;
+    background: rgba(255,255,255,0.9);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+    transform: scaleX(1);
+}
+
+#gioi-thieu {
+    text-align: center;
+}
+
+/* --- Danh sách sản phẩm (Product list layout) --- */
+#gioi-thieu, #san-pham, #lien-he {
+    padding: 20px 0;
+}
+
+#gioi-thieu h2, #san-pham h2, #lien-he h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+.product-list {
+    display: flex; /* Dùng flexbox để chia cột */
+    flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    justify-content: center;
+}
+
+.product-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bo tròn các góc */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 300px; /* Co giãn linh hoạt, chiều rộng cơ bản 300px */
+    max-width: 350px;
+    transition: transform 0.2s, box-shadow 0.2s; /* Hiệu ứng khi di chuột */
+    cursor: pointer;
+}
+.product-item:hover {
+    transform: translateY(-5px); /* Nhấc sản phẩm lên một chút khi hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.product-item img {
+    max-width: 100%; /* Để ảnh không tràn ra ngoài */
+    height: 150px; /* Cố định chiều cao ảnh */
+    object-fit: contain; /* Giữ tỷ lệ ảnh */
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    margin: 10px 0;
+    font-size: 1.25em;
+}
+
+.product-item .price {
+    color: #e74c3c; /* Giá màu đỏ nổi bật */
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* --- Form và Footer --- */
+#lien-he form {
+    max-width: 600px;
+    margin: 20px auto; /* Canh giữa form */
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#lien-he form div {
+    margin-bottom: 15px; /* Tạo khoảng cách giữa các trường input */
+}
+
+#lien-he label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#lien-he input,
+#lien-he textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Giúp padding không ảnh hưởng đến width */
+}
+
+#lien-he button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db; /* Màu nền nút */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#lien-he button:hover {
+    background-color: #2980b9; /* Màu nền khi hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #2c3e50;
+    color: #ecf0f1; /* Màu chữ xám nhạt */
+}
+
+/* Lớp CSS để ẩn phần tử */
+.hidden {
+    display: none;
+}
+
+/* Định dạng cho khu vực điều khiển sản phẩm */
+.product-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#searchInput {
+    flex-grow: 1; /* Cho phép ô tìm kiếm co giãn */
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#sortSelect {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#sortSelect:hover,
+#sortSelect:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+#showAddFormBtn {
+    padding: 10px 20px;
+    background-color: #27ae60; /* Màu xanh lá */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#showAddFormBtn:hover {
+    background-color: #229954;
+}
+
+/* Định dạng cho form thêm sản phẩm, tương tự form liên hệ */
+#addProductForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 5px solid #27ae60; /* Thêm điểm nhấn màu xanh */
+}
+
+#addProductForm div {
+    margin-bottom: 15px;
+}
+
+#addProductForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#addProductForm input,
+#addProductForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#addProductForm button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#addProductForm button:hover {
+    background-color: #229954;
+}
+
+/* Responsive cho khu vực điều khiển */
+@media (max-width: 600px) {
+    .product-controls {
+        flex-direction: column;
+    }
+    
+    .control-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    #searchInput, #showAddFormBtn, #sortSelect {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .product-actions button {
+        width: 100%;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+/* ---  Thiết kế Responsive --- */
+@media (max-width: 768px) {
+    /* Áp dụng cho màn hình nhỏ hơn 768px (máy tính bảng) */
+    .product-list {
+        flex-direction: column; /* Chuyển layout sản phẩm thành 1 cột */
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Áp dụng cho màn hình nhỏ hơn 600px (điện thoại) */
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    nav ul {
+        flex-direction: column; /* Chuyển menu thành menu dọc */
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0; /* Khoảng cách giữa các mục menu dọc */
+    }
+}
+
+/* --- CSS cho Bài tập 4 --- */
+
+/* Định dạng cho thông báo lỗi */
+.error-message {
+    color: #e74c3c; /* Màu đỏ */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Định dạng cho khu vực chứa các nút trong form */
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
+    margin-top: 15px;
+}
+
+/* Nút Hủy */
+#cancelBtn {
+    background-color: #7f8c8d; /* Màu xám */
+}
+
+#cancelBtn:hover {
+    background-color: #626F70;
+}
+
+/* Cho các nút trong form có độ rộng bằng nhau */
+#addProductForm button {
+    flex: 1; /* Chia đều không gian */
+}
+
+/* --- CSS cho các nút hành động trên sản phẩm --- */
+.product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-actions button {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 70px;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* --- CSS cho Modal --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+/* Chi tiết sản phẩm trong modal */
+.modal-product-detail {
+    text-align: center;
+}
+
+.modal-product-detail img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.modal-product-detail h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.modal-price {
+    color: #e74c3c;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.no-products-message {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 1.2em;
+    padding: 40px;
+}
